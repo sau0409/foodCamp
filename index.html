@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FoodCamp</title>
     <!---Title Icon-->
-    <link rel = "icon" href =  "./images/Logo-Icon.jpg" 
-        type = "image/x-icon"> 
+    <link rel="icon" href="./images/Logo-Icon.jpg" type="image/x-icon">
     <!---Font awesome-->
     <script src="https://kit.fontawesome.com/d281500a7b.js" crossorigin="anonymous"></script>
     <!---Google Fonts-->
@@ -21,7 +20,120 @@
 </head>
 
 <body>
-    <div class="hello">Hello</div>
+    <!---header-->
+    <header>
+        <!--navigation bar-->
+        <nav class="navbar fixed-top navbar-expand-md navbar-dark my-0 mx-0 py-0 px-0 d-flex justify-content-around">
+            <button type="button" class="btn c-nav-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <a href="#" class="navbar-brand">
+                <img src="./images/Logo.jpg" class="navbar-brand-logo" alt="Band Logo" loading="lazy">
+            </a>
+            <button type="button" class="btn c-nav-btn">
+                <i class="fas fa-shopping-cart"></i>
+                <div class="item-count-div">19</div>
+            </button>
+        </nav>
+    </header>
+
+    <!--main section-->
+    <main>
+        <!--Section: home-->
+        <section class="home pt-5 d-flex align-items-center justify-content-center">
+            <div class="card home-card">
+                <div class="card-body">
+                    <h2 class="card-title c-home-t1">Food craving ?</h2>
+                    <p class="card-text c-home-t2">Giving your hunger a new option.</p>
+                    <a href="#products" class="btn btn-outline-warning c-home-btn">Order Now</a>
+                </div>
+            </div>
+        </section>
+        <!--Section home ends-->
+        <!--Section: products-->
+        <section class="products">
+            <div class="product-div" id="products">
+                <h1 class="card-h">Food Items</h1>
+                <div class="container">
+                    <div class="row product-row justify-content-end">
+                        <div class="col-sm">
+                            <div class="card product-card">
+                                <img src="./images/Kadai-Paneer.jpg" class="product-img" alt="kdai paneer image">
+                                <div class="card-body">
+                                    <h6 class="card-title">Kadai Paneer</h6>
+                                    <p class="card-text mt-n2">140 &#x20B9;</p>
+                                    <div class="c-prod-btn mt-n2">
+                                        <button class="btn btn-block btn-success">Add</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm">
+                            <div class="card product-card">
+                                <img src="./images/Kadai-Paneer.jpg" class="product-img" alt="kdai paneer image">
+                                <div class="card-body">
+                                    <h6 class="card-title">Kadai Paneer</h6>
+                                    <p class="card-text mt-n2">140 &#x20B9;</p>
+                                    <div class="c-prod-btn mt-n2">
+                                        <button class="btn btn-block btn-success">Add</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm">
+                            <div class="card product-card">
+                                <img src="./images/Kadai-Paneer.jpg" class="product-img" alt="kdai paneer image">
+                                <div class="card-body">
+                                    <h6 class="card-title">Kadai Paneer</h6>
+                                    <p class="card-text mt-n2">140 &#x20B9;</p>
+                                    <div class="c-prod-btn mt-n2">
+                                        <button class="btn btn-block btn-success">Add</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm">
+                            <div class="card product-card">
+                                <img src="./images/Kadai-Paneer.jpg" class="product-img" alt="kdai paneer image">
+                                <div class="card-body">
+                                    <h6 class="card-title">Kadai Paneer</h6>
+                                    <p class="card-text mt-n2">140 &#x20B9;</p>
+                                    <div class="c-prod-btn mt-n2">
+                                        <button class="btn btn-block btn-success">Add</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm">
+                            <div class="card product-card">
+                                <img src="./images/Kadai-Paneer.jpg" class="product-img" alt="kdai paneer image">
+                                <div class="card-body">
+                                    <h6 class="card-title">Kadai Paneer</h6>
+                                    <p class="card-text mt-n2">140 &#x20B9;</p>
+                                    <div class="c-prod-btn mt-n2">
+                                        <button class="btn btn-block btn-success">Add</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm">
+                            <div class="card product-card">
+                                <img src="./images/Kadai-Paneer.jpg" class="product-img" alt="kdai paneer image">
+                                <div class="card-body">
+                                    <h6 class="card-title">Kadai Paneer</h6>
+                                    <p class="card-text mt-n2">140 &#x20B9;</p>
+                                    <div class="c-prod-btn mt-n2">
+                                        <button class="btn btn-block btn-success">Add</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
 </body>
 <script defer src="./data/footCatalogue.js"></script>
 <script defer src="./js/main.js"></script>

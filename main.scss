@@ -17,10 +17,165 @@ body {
     font-family: $main-font-family, sans-serif;
 }
 
+//header section
+
+//navbar
+
+.navbar {
+    background-color: $primary-color;
+    box-shadow: 0px .2rem 1rem gray;
+}
+
+nav button {
+    background-color: transparent;
+}
+
+nav button i {
+    color: $background-light;
+}
+
+.c-nav-btn:hover {
+    outline: solid;
+    outline-color: $background-light;
+}
+
+.c-nav-btn:active {
+    outline: solid;
+    outline-color: $background-light;
+}
+
+.c-nav-btn {
+    position: relative;
+}
+
+.item-count-div {
+    position: absolute;
+    top: -.1rem;
+    left: 1.1rem;
+    color: $tertiary-color;
+    font-size: .7rem;
+}
+
+//navbar style ends
+
+//main section starts
+
+//home section
+
+.home {
+    height: 100vh;
+    background: url("../images/home-bcg.jpg") center/cover no-repeat;
+    opacity: 0.7;
+    text-align: center;
+}
+
+.home>div {
+    width: 50vw;
+    height: auto;
+}
+
+.home-card {
+    background-color: $background-light;
+    opacity: 0.8;
+}
+
+.c-home-t1 {
+    color: $secondary-color;
+    font-weight: 600;
+}
+
+.c-home-t2 {
+    font-weight: 500;
+}
+
+.c-home-btn {
+    background-color:  $background-light;
+    color: $primary-color;
+    font-weight: 400;
+}
+
+.c-home-btn:hover {
+    background-color: $primary-color;
+    color: $background-light;
+    outline: none;
+}
+
+.c-home-btn:hover {
+    background-color: $primary-color;
+    color: $background-light;
+    outline: none;
+}
+
+//home section ends
+
+//products section starts
+
+.products {
+    height: 100vh;
+    text-align: center;
+}
+
+.product-div {
+    padding-top: 3.5rem;
+}
+
+.card-h {
+    color: $tertiary-color;
+}
+
+.product-row > .col-sm {
+    margin: 1rem;
+}
+
+.product-card {
+    width: 22vw;
+    height: auto;
+    font-size: .6rem;
+    text-align: start;
+    box-shadow: 3px 3px 3px gray;
+}
+
+.card-body {
+    padding: .5rem;
+}
+
+.product-img {
+    width: 100%;
+    height: 35vh;
+    opacity: .8;
+}
+
+.card-title {
+    color: $primary-color;
+}
+
+.card-text {
+    color: $secondary-color
+}
+
+.c-prod-btn {
+    text-align: center;
+}
+
+
 // Small devices (phones)
 @media (max-width: 400px) { 
     html {
-        font-size: 2rem;
+        font-size: 1.5rem;
+    }
+
+    .navbar-brand-logo {
+        width: 130px;
+        height: 60px;
+    }
+
+    .home>div {
+        width: 80vw;
+        height: auto;
+    }
+
+    .product-card {
+        width: 100%;
     }
 
  }
@@ -31,12 +186,28 @@ body {
         font-size: 1.5rem;
     }
 
+    .navbar-brand-logo {
+        width: 150px;
+        height: 70px;
+    }
+
+    .product-card {
+        width: 100%;
+    }
+
+   
+
  }
 
  // Medium devices (tablets)
 @media (min-width: 700px) and (max-width: 900px) { 
     html {
         font-size: 1rem;   
+    }
+
+    .navbar-brand-logo {
+        width: 140px;
+        height: 70px;
     }
 }
 
@@ -45,11 +216,32 @@ body {
     html {
         font-size: 1rem;
     }
+
+    .navbar-brand-logo {
+        width: 140px;
+        height: 70px;
+    }
  }
 
 // Extra large devices (large desktops)
-@media (min-width: 1200px) { 
+@media (min-width: 1200px) and (max-width: 1500px) { 
+    html {
+        font-size: 1.5rem;
+    }
+
+    .navbar-brand-logo {
+        width: 150px;
+        height: 70px;
+    }
+ }
+
+ @media (min-width: 1500px) { 
     html {
         font-size: 2rem;
+    }
+
+    .navbar-brand-logo {
+        width: 160px;
+        height: 80px;
     }
  }
