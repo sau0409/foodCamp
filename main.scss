@@ -19,11 +19,20 @@ body {
 
 //header section
 
+header {
+    position: relative;
+}
+
 //navbar
 
 .navbar {
     background-color: $primary-color;
     box-shadow: 0px .2rem 1rem gray;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    width: 100vw;
 }
 
 nav button {
@@ -57,6 +66,101 @@ nav button i {
 }
 
 //navbar style ends
+
+//cart overlay
+.cart-overlay {
+    background-color: $secondary-color;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 0vw;
+    height: 100vh;
+    z-index: 6;
+    text-align: center;
+    padding: 1rem .5rem;
+    overflow-y: scroll;
+    visibility: hidden;
+    transition-property: width;
+    transition-duration: 200ms;
+}
+
+.cart-overlay-show {
+    width: 30vw;
+    visibility: visible;
+}
+
+
+.cart-item-h {
+    color: $primary-color;
+    font-weight: 500;
+}
+
+.card-cart {
+    width: 100%;
+    height: 15vh;
+    background-color: $background-light;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-bottom: .5rem;
+}
+
+.cart-img {
+    height: 15vh;
+    width: 8vw;
+    padding-bottom: .2rem;
+    padding-top: .1rem;
+    padding-left: .1rem;
+}
+
+.card-cart-t {
+    font-size: .6rem;
+    text-align: start;
+    padding-left: .1rem;
+}
+
+.card-cart-t-1 {
+    font-weight: 600;
+}
+
+.card-cart-t-2 {
+    color: $tertiary-color;
+}
+
+.cart-cal-item {
+    font-size: .8rem;
+    display: grid;
+    grid-template-columns: .3fr .4fr .3fr;
+    align-items: center;
+    column-gap: .2rem;
+}
+
+.cart-btn {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    padding: .5rem;
+    width: 2rem;
+    color: $tertiary-color;
+}
+
+.card-cart-count {
+    color: $primary-color;
+}
+
+.card-cart-summary {
+    height: 20vh;
+}
+
+.cart-summary-btn {
+    background-color: $primary-color;
+    color: $background-light;
+}
+
+.cart-summary-btn:hover, .cart-summary-btn:active {
+    background-color: $background-light;
+    color: $primary-color;
+    font-weight: 600;
+}
 
 //main section starts
 
