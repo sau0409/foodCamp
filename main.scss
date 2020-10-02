@@ -89,6 +89,23 @@ nav button i {
     visibility: visible;
 }
 
+.black-overlay {
+    background-color: #000;
+    background-size: 100vw 100vh;
+    opacity: 0.9;
+    z-index: 10;    
+}
+
+.cart-overlay-close {
+    position: absolute;
+    top: 1vh;
+    right: 25vw;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: $primary-color;
+}
+
 
 .cart-item-h {
     color: $primary-color;
@@ -148,7 +165,7 @@ nav button i {
 }
 
 .card-cart-summary {
-    height: 20vh;
+    height: auto;
 }
 
 .cart-summary-btn {
@@ -215,8 +232,8 @@ nav button i {
 //products section starts
 
 .products {
-    height: 100vh;
     text-align: center;
+    background-color: #fdf8e7;
 }
 
 .product-div {
