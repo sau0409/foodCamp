@@ -17,7 +17,7 @@ body {
     font-family: $main-font-family, sans-serif;
 }
 
-// Small devices (landscape phones, 576px and up)
+// Small devices (phones)
 @media (max-width: 400px) { 
     html {
         font-size: 2rem;
@@ -25,7 +25,7 @@ body {
 
  }
 
-// Medium devices (tablets, 768px and up)
+// Medium devices (tablets)
 @media (min-width: 400px) and (max-width: 700px) { 
     html {
         font-size: 1.5rem;
@@ -33,21 +33,21 @@ body {
 
  }
 
- // Medium devices (tablets, 768px and up)
+ // Medium devices (tablets)
 @media (min-width: 700px) and (max-width: 900px) { 
     html {
         font-size: 1rem;   
     }
 }
 
-// Large devices (desktops, 992px and up)
+// Large devices (desktops)
 @media (min-width: 900px) and (max-width: 1200px) { 
     html {
         font-size: 1rem;
     }
  }
 
-// Extra large devices (large desktops, 1200px and up)
+// Extra large devices (large desktops)
 @media (min-width: 1200px) { 
     html {
         font-size: 2rem;
