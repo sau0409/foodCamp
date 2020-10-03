@@ -86,12 +86,24 @@ nav button i {
 
 .cart-overlay-close {
   position: absolute;
+  cursor: pointer;
   top: 1vh;
-  right: 25vw;
+  right: 90%;
   background-color: transparent;
   border: none;
   outline: none;
   color: #223478;
+}
+
+.cart-overlay-reset {
+  position: absolute;
+  cursor: pointer;
+  top: 1vh;
+  right: 5%;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: #F06449;
 }
 
 .cart-item-h {
@@ -108,6 +120,8 @@ nav button i {
   -ms-grid-columns: 1fr 1fr 1fr;
       grid-template-columns: 1fr 1fr 1fr;
   margin-bottom: .5rem;
+  -webkit-box-shadow: 2px 2px 2px gray;
+          box-shadow: 2px 2px 2px gray;
 }
 
 .cart-img {
@@ -223,7 +237,7 @@ nav button i {
 }
 
 .product-div {
-  padding-top: 3.5rem;
+  padding-top: 4rem;
 }
 
 .card-h {
@@ -231,7 +245,7 @@ nav button i {
 }
 
 .product-row > .col-sm {
-  margin: 1rem;
+  margin: 1rem .3rem;
 }
 
 .product-card {
@@ -273,6 +287,14 @@ nav button i {
     width: 130px;
     height: 60px;
   }
+  .cart-overlay-show {
+    width: 100vw;
+    visibility: visible;
+  }
+  .cart-img {
+    height: 15vh;
+    width: 25vw;
+  }
   .home > div {
     width: 80vw;
     height: auto;
@@ -280,9 +302,12 @@ nav button i {
   .product-card {
     width: 100%;
   }
+  .product-row > .col-sm {
+    margin: .7rem;
+  }
 }
 
-@media (min-width: 400px) and (max-width: 700px) {
+@media (min-width: 400px) and (max-width: 576px) {
   html {
     font-size: 1.5rem;
   }
@@ -290,12 +315,20 @@ nav button i {
     width: 150px;
     height: 70px;
   }
+  .cart-overlay-show {
+    width: 60vw;
+    visibility: visible;
+  }
+  .cart-img {
+    height: 15vh;
+    width: 25vw;
+  }
   .product-card {
     width: 100%;
   }
 }
 
-@media (min-width: 700px) and (max-width: 900px) {
+@media (min-width: 576px) and (max-width: 768px) {
   html {
     font-size: 1rem;
   }
@@ -303,14 +336,46 @@ nav button i {
     width: 140px;
     height: 70px;
   }
+  .product-row > .col-sm {
+    margin: 1rem .3rem;
+  }
+  .product-card {
+    width: 30vw;
+  }
+  .product-img {
+    width: 100%;
+    height: 30vh;
+    opacity: .8;
+  }
 }
 
-@media (min-width: 900px) and (max-width: 1200px) {
+@media (min-width: 768px) and (max-width: 992px) {
   html {
     font-size: 1rem;
   }
   .navbar-brand-logo {
     width: 140px;
+    height: 70px;
+  }
+  .product-row > .col-sm {
+    margin: 1rem .1vw;
+  }
+  .product-card {
+    width: 20vw;
+  }
+  .product-img {
+    width: 100%;
+    height: 30vh;
+    opacity: .8;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+  html {
+    font-size: 1rem;
+  }
+  .navbar-brand-logo {
+    width: 150px;
     height: 70px;
   }
 }
@@ -320,18 +385,59 @@ nav button i {
     font-size: 1.5rem;
   }
   .navbar-brand-logo {
-    width: 150px;
-    height: 70px;
+    width: 160px;
+    height: 80px;
+  }
+  .product-card {
+    width: 20vw;
   }
 }
 
-@media (min-width: 1500px) {
+@media (min-width: 1500px) and (max-width: 1800px) {
   html {
     font-size: 2rem;
   }
   .navbar-brand-logo {
-    width: 160px;
-    height: 80px;
+    width: 180px;
+    height: 90px;
+  }
+  .product-card {
+    width: 20vw;
+  }
+  .product-row > .col-sm {
+    margin: 1rem 0vw;
+  }
+}
+
+@media (min-width: 1800px) and (max-width: 2100px) {
+  html {
+    font-size: 2.5rem;
+  }
+  .navbar-brand-logo {
+    width: 190px;
+    height: 95px;
+  }
+  .product-card {
+    width: 18vw;
+  }
+  .product-row > .col-sm {
+    margin: 1rem 0vw;
+  }
+}
+
+@media (min-width: 2100px) {
+  html {
+    font-size: 3rem;
+  }
+  .navbar-brand-logo {
+    width: 190px;
+    height: 95px;
+  }
+  .product-card {
+    width: 16vw;
+  }
+  .product-row > .col-sm {
+    margin: 1rem 0vw;
   }
 }
 /*# sourceMappingURL=main.css.map */
