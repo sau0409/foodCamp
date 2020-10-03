@@ -1,34 +1,65 @@
-// all button selected
-let barsBtn = document.getElementById("barsBtn");
-let cartBtn = document.getElementById("cartBtn");
-let cartPlus = document.getElementById("cartPlus");
-let cartMinus = document.getElementById("cartMinus");
-let checkoutBtn = document.getElementById("checkoutBtn");
-let addItemBtn = document.getElementById("addItemBtn");
-let cartOverlayCloseBtn = document.getElementById("cartOverlayCloseBtn");
-let cartOverlayResetBtn = document.getElementById("cartOverlayResetBtn");
-let cartoverlay = document.querySelector(".cart-overlay");
-let cartTotalCount = document.querySelector(".item-count-div");
-let cartItemCount = document.querySelector(".card-cart-count");
-let totalAmount = document.getElementById("totalAmout");
-let productItemCntainer = document.querySelector(".product-row");
-let cartItemContainer = document.querySelector(".card-cont");
+// all buttons and containers selected
+const barsBtn = document.getElementById("barsBtn");
+const cartBtn = document.getElementById("cartBtn");
+const cartPlusBtn = document.getElementById("cartPlus");
+const cartMinusBtn = document.getElementById("cartMinus");
+const checkoutBtn = document.getElementById("checkoutBtn");
+const addItemBtn = document.getElementById("addItemBtn");
+const cartOverlayCloseBtn = document.getElementById("cartOverlayCloseBtn");
+const cartOverlayResetBtn = document.getElementById("cartOverlayResetBtn");
+const cartoverlay = document.querySelector(".cart-overlay");
+const cartTotalCount = document.querySelector(".item-count-div");
+const cartItemCount = document.querySelector(".card-cart-count");
+const totalAmount = document.getElementById("totalAmout");
+const productItemCntainer = document.querySelector(".product-row");
+const cartItemContainer = document.querySelector(".card-cont");
+
+// variables
+
+let cart = [];
 
 
-// listen to navigation cart button click to open overlay
+// getting products
 
-cartBtn.addEventListener("click", () => {
-    console.log("clciked");
-    cartoverlay.classList.add("cart-overlay-show");
-    document.body.classList.add("black-overlay");
+class Products {
+
+}
+
+// display products
+
+class Ui {
+
+}
+
+// local storage
+
+class Storage {
+
+}
+
+// do rendering after dom is loaded
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    // listen to navigation cart button click to open overlay
+
+    cartBtn.addEventListener("click", () => {
+        console.log("clciked");
+        cartoverlay.classList.add("cart-overlay-show");
+        document.body.classList.add("black-overlay");
+    });
+
+    // listen to cart close button click to close overlay
+
+    cartOverlayCloseBtn.addEventListener("click", () => {
+        console.log("clciked");
+        cartoverlay.classList.remove("cart-overlay-show");
+        document.body.classList.remove("black-overlay");
+    });
+
+    // intialising classes
+
+    let products = new Products();
+    let ui = new Ui();
+
 });
-
-// listen to cart c;ose button click to close overlay
-
-cartOverlayCloseBtn.addEventListener("click", () => {
-    console.log("clciked");
-    cartoverlay.classList.remove("cart-overlay-show");
-    document.body.classList.remove("black-overlay");
-});
-
-// cart count
