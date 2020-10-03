@@ -11,6 +11,8 @@ let cartoverlay = document.querySelector(".cart-overlay");
 let cartTotalCount = document.querySelector(".item-count-div");
 let cartItemCount = document.querySelector(".card-cart-count");
 let totalAmount = document.getElementById("totalAmout");
+let productItemCntainer = document.querySelector(".product-row");
+let cartItemContainer = document.querySelector(".card-cont");
 
 
 // listen to navigation cart button click to open overlay
