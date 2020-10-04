@@ -347,6 +347,37 @@ nav button i {
   text-align: center;
 }
 
+footer {
+  width: 100%;
+  height: 20vh;
+  background-color: #F2CB52;
+  color: #223478;
+  font-size: 1 rem;
+  font-weight: 500;
+}
+
+.footer-cont {
+  padding: 1rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-items: center;
+}
+
+.footer-ic a i {
+  font-size: 2rem;
+  color: #223478;
+}
+
+.footer-ic {
+  font-size: 2rem;
+  color: #223478;
+}
+
 @media (max-width: 400px) {
   html {
     font-size: 1.5rem;
