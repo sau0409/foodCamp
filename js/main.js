@@ -90,7 +90,7 @@ class Ui {
                 )) {
                 el.innerHTML = "In cart";
                 el.disabled = true;
-            } 
+            }
             el.addEventListener("click", () => {
                 let product = Storage.getProduct(btnId);
                 //destructuring product as per need 
@@ -197,20 +197,33 @@ class Ui {
         });
 
         //cart item listner
-        cartItemContainer.addEventListener("click", (event)=>{
+        cartItemContainer.addEventListener("click", (event) => {
             let target = event.target;
             let id = target.getAttribute("data-id");
 
             if (target.classList.contains('item-remove')) {
-                this.removeCartItem(id);
-            }
-            else if  (event.target.classList.contains('item-add')) {
-                console.log("add");
-                
+                this.removeCartItem(id); // removing whole item from doma and storage
+            } else if (target.classList.contains('item-add')) {
+                let tempItem = cart.find((el) => {
+                    return el.itemId === id;
+                })
+                tempItem.itemCount = tempItem.itemCount + 1;
+                Storage.storeCart(cart);
+                this.setCartValues(cart);
+                target.parentElement.nextElementSibling.innerText = tempItem.itemCount;
 
-            }
-            else if  (event.target.classList.contains('item-minus')) {
-                console.log("minus");
+            } else if (target.classList.contains('item-minus')) {
+
+                let tempItem = cart.find((el) => el.itemId === id);
+                tempItem.itemCount = tempItem.itemCount - 1;
+                if (tempItem.itemCount > 0) {
+                    Storage.storeCart(cart);
+                    this.setCartValues(cart);
+                    target.parentElement.previousElementSibling.innerText = tempItem.itemCount;
+                } else {
+                    this.removeCartItem(id);
+                }
+
             }
         });
 
@@ -258,26 +271,27 @@ class Ui {
     }
 
     clearCart() {
-        let cartItems = cart.map((item)=> item.itemId);
-        cartItems.forEach((el)=> {
+        let cartItems = cart.map((item) => item.itemId);
+        cartItems.forEach((el) => {
             this.removeCartItem(el);
         });
         console.log(cartItems);
     }
 
     removeCartItem(itemId) {
-        cart = cart.filter((item)=> {
+        cart = cart.filter((item) => {
             return item.itemId !== itemId;
         });
         this.setCartValues(cart);
         Storage.storeCart(cart);
         let itemEl = document.getElementById(`item-${itemId}`);
+        console.log(itemEl);
         cartItemContainer.removeChild(itemEl);
         this.enableProduct(itemId);
     }
 
     enableProduct(itemId) {
-        let product = productAddBtn.find((el)=> {
+        let product = productAddBtn.find((el) => {
             return itemId === el.getAttribute("id");
         })
         product.innerHTML = "Add";
@@ -338,6 +352,33 @@ document.addEventListener("DOMContentLoaded", () => {
     }).then(() => {
         ui.getProductAddBtn();
         ui.cartLogic();
+    });
+
+    //checkout order
+    checkoutBtn.addEventListener("click", () => {
+        if( document.querySelector(".checkoutOrder").classList.contains('checkoutOrderShow')) {
+            document.querySelector(".checkoutOrder").classList.remove("checkoutOrderShow");
+        }
+        else if(document.querySelector(".checkoutOrder2").classList.contains('checkoutOrderShow')){
+            document.querySelector(".checkoutOrder2").classList.remove("checkoutOrderShow");
+        }
+        console.log(cart.length);
+        if (cart.length > 0) {
+            setTimeout(() => {
+                document.querySelector(".checkoutOrder").classList.add("checkoutOrderShow");
+                cartoverlay.classList.remove("cart-overlay-show");
+                document.body.classList.remove("black-overlay");
+                ui.clearCart();
+            }, 2000)
+        } else {
+            setTimeout(() => {
+                document.querySelector(".checkoutOrder2").classList.add("checkoutOrderShow");
+                cartoverlay.classList.remove("cart-overlay-show");
+                document.body.classList.remove("black-overlay");
+            }, 100)
+        }
+
+
     });
 
 

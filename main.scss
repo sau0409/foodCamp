@@ -161,6 +161,7 @@ nav button i {
     cursor: pointer;
     color: $primary-color;
     font-weight: 700;
+    margin-top: -.5rem;
 }
 
 .cart-cal-item {
@@ -199,6 +200,48 @@ nav button i {
     font-weight: 600;
 }
 
+.checkoutOrder, .checkoutOrder2 {
+    position: absolute;
+    text-align: center;
+    top: 40vh;
+    left: 35vw;
+    width: 30vw;
+    background-color: $secondary-color;
+    visibility: hidden;
+}
+
+.checkoutOrder .card-text, .checkoutOrder2 .card-text {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: $primary-color;
+}
+
+
+.checkoutOrder .card-text2 {
+    font-size: 1rem;
+    font-weight: 400;
+    color: $background-light;
+}
+
+.checkoutOrderShow {
+    animation-duration: 2000ms;
+    animation-name: showCart;
+    animation-timing-function: ease-out;
+}
+
+@keyframes showCart{
+    0% {
+        visibility: hidden;
+    }
+    50% {
+        visibility: visible;
+    }
+
+    100% {
+        visibility: visible;
+    }
+}
+
 //main section starts
 
 //home section
@@ -211,7 +254,7 @@ nav button i {
 }
 
 .home>div {
-    width: 50vw;
+    width: 45vw;
     height: auto;
 }
 
@@ -354,7 +397,7 @@ nav button i {
     }
 
     .cart-overlay-show {
-        width: 60vw;
+        width: 90vw;
         visibility: visible;
     }
 
@@ -379,6 +422,11 @@ nav button i {
     .navbar-brand-logo {
         width: 140px;
         height: 70px;
+    }
+
+    .cart-overlay-show {
+        width: 50vw;
+        visibility: visible;
     }
 
     .product-row > .col-sm {
@@ -406,6 +454,11 @@ nav button i {
     .navbar-brand-logo {
         width: 140px;
         height: 70px;
+    }
+
+    .cart-overlay-show {
+        width: 40vw;
+        visibility: visible;
     }
 
     .product-row > .col-sm {

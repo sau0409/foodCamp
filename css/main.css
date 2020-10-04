@@ -150,6 +150,7 @@ nav button i {
   cursor: pointer;
   color: #223478;
   font-weight: 700;
+  margin-top: -.5rem;
 }
 
 .cart-cal-item {
@@ -193,6 +194,61 @@ nav button i {
   font-weight: 600;
 }
 
+.checkoutOrder, .checkoutOrder2 {
+  position: absolute;
+  text-align: center;
+  top: 40vh;
+  left: 35vw;
+  width: 30vw;
+  background-color: #F2CB52;
+  visibility: hidden;
+}
+
+.checkoutOrder .card-text, .checkoutOrder2 .card-text {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #223478;
+}
+
+.checkoutOrder .card-text2 {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #fff;
+}
+
+.checkoutOrderShow {
+  -webkit-animation-duration: 2000ms;
+          animation-duration: 2000ms;
+  -webkit-animation-name: showCart;
+          animation-name: showCart;
+  -webkit-animation-timing-function: ease-out;
+          animation-timing-function: ease-out;
+}
+
+@-webkit-keyframes showCart {
+  0% {
+    visibility: hidden;
+  }
+  50% {
+    visibility: visible;
+  }
+  100% {
+    visibility: visible;
+  }
+}
+
+@keyframes showCart {
+  0% {
+    visibility: hidden;
+  }
+  50% {
+    visibility: visible;
+  }
+  100% {
+    visibility: visible;
+  }
+}
+
 .home {
   height: 100vh;
   background: url("../images/home-bcg.jpg") center/cover no-repeat;
@@ -201,7 +257,7 @@ nav button i {
 }
 
 .home > div {
-  width: 50vw;
+  width: 45vw;
   height: auto;
 }
 
@@ -328,7 +384,7 @@ nav button i {
     height: 70px;
   }
   .cart-overlay-show {
-    width: 60vw;
+    width: 90vw;
     visibility: visible;
   }
   .cart-img {
@@ -347,6 +403,10 @@ nav button i {
   .navbar-brand-logo {
     width: 140px;
     height: 70px;
+  }
+  .cart-overlay-show {
+    width: 50vw;
+    visibility: visible;
   }
   .product-row > .col-sm {
     margin: 1rem .3rem;
@@ -368,6 +428,10 @@ nav button i {
   .navbar-brand-logo {
     width: 140px;
     height: 70px;
+  }
+  .cart-overlay-show {
+    width: 40vw;
+    visibility: visible;
   }
   .product-row > .col-sm {
     margin: 1rem .1vw;
