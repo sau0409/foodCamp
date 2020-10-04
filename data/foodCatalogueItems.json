@@ -4,7 +4,7 @@
 			"group": "south-indian",
 			"subGroup": "dosa",
 			"price": "100",
-			"image": "./images/Masala-Dosa.jpg"
+			"image": "images/Masala-Dosa.jpg"
 		},
 		{
 			"itemName": "Plain Dosa",
@@ -19,13 +19,6 @@
 			"subGroup": "dosa",
 			"price": "140",
 			"image": "./images/Paneer-Dosa.jpg"
-		},
-		{
-			"itemName": "Idli Sambar",
-			"group": "south-indian",
-			"subGroup": "idli",
-			"price": "80",
-			"image": "./images/idli-Sambar.jpg"
 		},
 		{
 			"itemName": "Kadai Paneer",
@@ -66,20 +59,6 @@
 			"price": "135",
 			"halfPrice": "70",
 			"image": "./images/Dal-Tadka.jpg"
-		},
-		{
-			"itemName": "Tawa roti",
-			"group": "north-indian",
-			"subGroup": "roti",
-			"price": "8",
-			"image": "./images/Tawa-roti.jpg"
-		},
-		{
-			"itemName": "Tandoori roti",
-			"group": "north-indian",
-			"subGroup": "roti",
-			"price": "10",
-			"image": "./images/Tandoori-roti.jpg"
 		},
 		{
 			"itemName": "Butter Naan",
