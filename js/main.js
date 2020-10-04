@@ -22,7 +22,7 @@ let cart = [];
 
 class Products {
 
-    async getProducts() {
+    async getProductsFromBackend() {
         try {
             let productsList = await fetch("./data/foodCatalogueItems.json");
             let data = await productsList.json();
@@ -58,7 +58,6 @@ class Products {
 class Ui {
 
     displayProducts(products) {
-        let result = '';
         products.forEach(product => {
             let productDiv = `<div class="col-sm">
             <div class="card product-card">
@@ -73,6 +72,7 @@ class Ui {
             </div>
         </div>`
             productItemCntainer.insertAdjacentHTML('afterbegin', productDiv);
+            
         });
     }
 
@@ -88,20 +88,74 @@ class Ui {
                 el.disabled = true;
             }
             el.addEventListener("click", () => {
-                let pro = JSON.parse(window.sessionStorage.getItem("products"));
-
-                cart.push(pro.find((proEl) => {
-                    return proEl.itemId === btnId;
-                }));
+                let product = Storage.getProduct(btnId);
+                //destructuring product as per need 
+                //itemCount will have that item count
+                let cartItem = {
+                    itemId: product.itemId,
+                    itemName: product.itemName,
+                    price: product.price,
+                    img: product.img,
+                    itemCount: 1
+                }
+                // add selected item to cart
+                cart = [...cart, cartItem];
                 Storage.storeCart(cart);
 
-                console.log(cart);
                 el.innerHTML = "In cart";
                 el.disabled = true;
-                cartTotalCount.innerHTML = cart.length;
+                // display cart length on navbar
+                
+                this.setCartValues(cart);
+                console.log(cartItem);
+                this.displayCartItem(cartItem);
             })
-            cartTotalCount.innerHTML = cart.length;
+            let cartCount = 0;
+            cart.forEach((elem)=> {
+                cartCount+= elem.itemCount;
+            })
+            cartTotalCount.innerHTML = String(cartCount);
         });
+    }
+
+    //calculation total cart amount and total item count
+
+    setCartValues(cart) {
+        let cartCount = 0;
+        let cartAmount = 0;
+        cart.forEach((elem)=> {
+            cartCount+= elem.itemCount;
+            cartAmount+= elem.itemCount * parseInt(elem.price);
+        })
+        cartTotalCount.innerHTML = String(cartCount);
+        totalAmount.innerText = String(cartAmount);
+    }
+
+    //displaying cart
+
+    displayCartItem(item) {
+        console.log(item);
+            let cartItemDiv = `<div class="card card-cart">
+            <div>
+                <img src="${item.img}" class="cart-img" alt="kdai paneer image">
+            </div>
+            <div class="card-cart-t">
+                <p class="card-cart-t-1">${item.itemName}</p>
+                <p class="card-cart-t-2">${item.price} &#x20B9;</p>
+            </div>
+            <div class="cart-cal-item">
+                <button class="cart-btn" data-id=${item.itemId}>
+                    <i class="fas fa-plus-square cart-ic"></i>
+                </button>
+                <div class="card-cart-count">${item.itemCount}</div>
+                <button class="cart-btn" data-id=${item.itemId}>
+                    <i class="fas fa-minus-square cart-ic"></i>
+                </button>
+            </div>
+        </div>`
+        console.log(cartItemDiv);
+        cartItemContainer.insertAdjacentHTML("afterbegin", cartItemDiv);
+
     }
 
 
@@ -114,9 +168,31 @@ class Storage {
     static storeProducts(products) {
         window.sessionStorage.setItem("products", JSON.stringify(products));
     }
+    
+    static getProducts() {
+        return JSON.parse(window.sessionStorage.getItem("products"));
+    }
+
+    static getProduct(id) {
+        let productsArray = this.getProducts();
+        return productsArray.find((elem)=> {
+            return elem.itemId === id
+        })
+    }
 
     static storeCart(cart) {
         window.localStorage.setItem("cart", JSON.stringify(cart));
+    }
+
+    static getCart() {
+        return JSON.parse(window.localStorage.getItem("cart"));
+    }
+
+    static getCartItem(id) {
+        let cartArray = this.getCart();
+        return cartArray.find((elem)=> {
+            return elem.itemId === id
+        })
     }
 }
 
@@ -148,11 +224,12 @@ document.addEventListener("DOMContentLoaded", () => {
     let products = new Products();
     let ui = new Ui();
 
-    products.getProducts().then((products) => {
+    products.getProductsFromBackend().then((products) => {
         ui.displayProducts(products);
         Storage.storeProducts(products);
     }).then(() => {
         ui.getProductAddBtn();
+        
     });
 
 
