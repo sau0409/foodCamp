@@ -146,6 +146,12 @@ nav button i {
   color: #F06449;
 }
 
+.card-cart-t-3 {
+  cursor: pointer;
+  color: #223478;
+  font-weight: 700;
+}
+
 .cart-cal-item {
   font-size: .8rem;
   display: -ms-grid;

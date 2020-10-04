@@ -118,10 +118,6 @@ class Ui {
             this.setCartValues(cart);
 
         });
-
-        cart.forEach((cartItem) => {
-            this.displayCartItem(cartItem);
-        })
     }
 
     //calculation total cart amount and total item count
@@ -147,6 +143,7 @@ class Ui {
             <div class="card-cart-t">
                 <p class="card-cart-t-1">${item.itemName}</p>
                 <p class="card-cart-t-2">${item.price  * item.itemCount} &#x20B9;</p>
+                <p class="card-cart-t-3" id="remove-item-${item.itemId}">Remove</p>
             </div>
             <div class="cart-cal-item">
                 <button class="cart-btn" data-id=${item.itemId} functionality="add">
@@ -311,19 +308,11 @@ class Storage {
 document.addEventListener("DOMContentLoaded", () => {
 
     // creating instance of classes
-
     let products = new Products();
     let ui = new Ui();
 
     //setup cart items
     ui.setupCart();
-    /*
-        let cartLocalStorage = JSON.parse(window.localStorage.getItem("cart"));
-        if (cartLocalStorage) {
-            cart = cartLocalStorage;
-        }
-    */
-
 
 
     products.getProductsFromBackend().then((products) => {
