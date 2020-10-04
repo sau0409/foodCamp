@@ -108,9 +108,11 @@ class Ui {
 
                 el.innerHTML = "In cart";
                 el.disabled = true;
-                // display cart length on navbar
 
+                //set cart values for item
                 this.setCartValues(cart);
+
+                //display cart items in cart
                 this.displayCartItem(cartItem);
 
             })
@@ -143,15 +145,15 @@ class Ui {
             <div class="card-cart-t">
                 <p class="card-cart-t-1">${item.itemName}</p>
                 <p class="card-cart-t-2">${item.price  * item.itemCount} &#x20B9;</p>
-                <p class="card-cart-t-3" id="remove-item-${item.itemId}">Remove</p>
+                <p class="card-cart-t-3 item-remove" data-id="${item.itemId}">Remove</p>
             </div>
             <div class="cart-cal-item">
-                <button class="cart-btn" data-id=${item.itemId} functionality="add">
-                    <i class="fas fa-plus-square cart-ic"></i>
+                <button class="cart-btn"  functionality="add">
+                    <i class="fas fa-plus-square item-add cart-ic" data-id=${item.itemId}></i>
                 </button>
                 <div class="card-cart-count">${item.itemCount}</div>
-                <button class="cart-btn" data-id=${item.itemId} functionality="minus">
-                    <i class="fas fa-minus-square cart-ic"></i>
+                <button class="cart-btn"  functionality="minus">
+                    <i class="fas fa-minus-square item-minus cart-ic" data-id=${item.itemId}></i>
                 </button>
             </div>
         </div>`
@@ -189,12 +191,27 @@ class Ui {
 
     cartLogic() {
 
+        //clear cart
         cartResetBtn.addEventListener("click", () => {
-            /*cart = []; // cart to null
-            Storage.storeCart(cart); //resetting localStorage
-            cartItemContainer.innerHTML = ''; // cart items to null
-            ui.setCartValues(cart); // setting cart values*/
             this.clearCart();
+        });
+
+        //cart item listner
+        cartItemContainer.addEventListener("click", (event)=>{
+            let target = event.target;
+            let id = target.getAttribute("data-id");
+
+            if (target.classList.contains('item-remove')) {
+                this.removeCartItem(id);
+            }
+            else if  (event.target.classList.contains('item-add')) {
+                console.log("add");
+                
+
+            }
+            else if  (event.target.classList.contains('item-minus')) {
+                console.log("minus");
+            }
         });
 
 
